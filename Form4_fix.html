@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Biodata (Perbaikan)</title>
+    <style>
+        label.t { display: inline-block; min-width: 130px; }
+        input:invalid:not(:placeholder-shown) { border: 2px solid #c00; }
+    </style>
+</head>
+<body>
+<form action="Form4_fix.html" method="post">
+    <fieldset>
+        <legend><h1>Formulir Peserta</h1></legend>
+        <p>
+            <label class="t" for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+        </p>
+        <p>
+            <label class="t" for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Masukkan username"
+                   pattern="[A-Za-z0-9_]{4,20}" title="4-20 karakter: huruf, angka, atau garis bawah"
+                   autocomplete="username" required>
+        </p>
+        <p>
+            <label class="t" for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Minimal 8 karakter"
+                   minlength="8" autocomplete="new-password" required>
+        </p>
+        <p>
+            <span class="t" style="display:inline-block;min-width:130px">Jenis Kelamin:</span>
+            <input type="radio" id="lk" name="jenkel" value="laki-laki" required><label for="lk">Laki-laki</label>
+            <input type="radio" id="pr" name="jenkel" value="perempuan"><label for="pr">Perempuan</label>
+        </p>
+        <p>
+            <label class="t" for="tanggal">Tanggal Lahir:</label>
+            <input type="date" id="tanggal" name="tanggal" max="2026-11-10" required>
+        </p>
+        <p>
+            <label class="t" for="agama">Agama:</label>
+            <select id="agama" name="agama" required>
+                <option value="" selected disabled>-- Pilih agama --</option>
+                <option value="budha">Budha</option>
+                <option value="hindu">Hindu</option>
+                <option value="islam">Islam</option>
+                <option value="katholik">Kristen Katholik</option>
+                <option value="protestan">Kristen Protestan</option>
+            </select>
+        </p>
+        <p>
+            <label class="t" for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="nama@contoh.com" required>
+        </p>
+        <p>
+            <span style="display:inline-block;min-width:130px">Pilih Course:</span>
+            <input type="checkbox" id="c1" name="course" value="web-native"><label for="c1">Web Native</label>
+            <input type="checkbox" id="c2" name="course" value="web-framework"><label for="c2">Web Framework</label>
+            <input type="checkbox" id="c3" name="course" value="mobile-native"><label for="c3">Mobile Native</label>
+            <input type="checkbox" id="c4" name="course" value="mobile-lintas-platform"><label for="c4">Mobile Lintas Platform</label>
+        </p>
+        <p>
+            <label for="alamat">Alamat:</label><br>
+            <textarea id="alamat" name="alamat" cols="50" rows="6" required></textarea>
+        </p>
+        <p>
+            <input type="submit" name="submit" value="Daftar">
+        </p>
+    </fieldset>
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengenal Textarea (Perbaikan)</title>
+    <style>
+        label { display: block; font-weight: bold; margin-bottom: 4px; }
+        #alamat {
+            width: 100%;
+            max-width: 420px;
+            font-size: 16px;      /* sebelumnya 10px: terlalu kecil */
+            color: #222;          /* sebelumnya merah: kontras/keterbacaan buruk */
+            font-family: inherit;
+            padding: 6px;
+        }
+        .bantuan { font-size: 13px; color: #555; }
+    </style>
+</head>
+<body>
+    <form action="Form2_fix.html" method="get">
+        <p>
+            <label for="alamat">Alamat:</label>
+            <textarea name="alamat" id="alamat" rows="6" maxlength="200"
+                      placeholder="Contoh: Jl. Veteran No. 1, Malang" required
+                      aria-describedby="bantuan"></textarea>
+            <span id="bantuan" class="bantuan">Maksimal 200 karakter.</span>
+        </p>
+        <button type="submit">Kirim</button>
+    </form>
+</body>
+</html>
